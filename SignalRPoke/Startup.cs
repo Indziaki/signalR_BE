@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SignalRPoke.Hubs;
+using SignalRPoke.Services;
 
 namespace SignalRPoke
 {
@@ -27,6 +28,7 @@ namespace SignalRPoke
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, GenerateRandom>();
             services.AddSignalR();
             services.AddCors();
         }

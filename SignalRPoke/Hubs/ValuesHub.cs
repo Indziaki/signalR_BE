@@ -19,6 +19,6 @@ namespace SignalRPoke.Hubs
         /// Notify all users that a value has been removed.
         /// </summary>
         /// <param name="value">The removed value</param>
-        public async Task Delete(string value) => await Clients.All.Delete(value);
+        public async Task Delete(string value) => await Clients.All.Delete(value);      
     }
 }
